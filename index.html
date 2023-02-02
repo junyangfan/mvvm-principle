@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='school.name'>
+        <div>{{school.name}}</div>
+        <div>{{school.age}}</div>
+        <!-- 使用计算属性 -->
+        {{getNewName}}
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+    </div>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script> -->
+    <script src="VueMVVM.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                school: {
+                    name: "HuangHuai",
+                    age: 10
+                }
+            },
+            computed: {
+                getNewName(){
+                    return this.school.name + "666";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
